@@ -6,7 +6,7 @@
     'website': '',
     'version': '1.0',
     'description': "",
-    'depends': ['website', 'sale', 'website_payment', 'website_sale ', 'website_mail', 'website_form', 'website_rating', 'digest'],
+    'depends': ['website', 'sale', 'website_payment', 'website_sale', 'website_mail', 'website_form', 'website_rating', 'digest'],
     'data': [
         'views/template.xml'
     ],

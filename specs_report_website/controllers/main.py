@@ -20,9 +20,6 @@ _logger = logging.getLogger(__name__)
 class ProductSpecsReport(ProductConfiguratorController):
 
     @http.route(['/shop/product/<model("product.template"):product>'], type='http', auth="public", website=True)
-    def productspecsreport(self):
-        print()
-
     def product(self, product, category='', search='', **kwargs):
         if not product.can_access_from_current_website():
             raise NotFound()
