@@ -27,11 +27,11 @@ class ProductSpecification(models.Model):
 
     # Mycotoxins
 
-    ps_aflotoxin_b1 = fields.char('Aflotoxin B1')
-    ps_aflotoxin_b2 = fields.char('Aflotoxin B2')
-    ps_aflotoxin_g1 = fields.char('Aflotoxin G1')
-    ps_aflotoxin_g2 = fields.char('Aflotoxin G2')
-    ps_ochratoxin_a = fields.char('Ochratoxin A')
+    ps_aflotoxin_b1 = fields.Char('Aflotoxin B1')
+    ps_aflotoxin_b2 = fields.Char('Aflotoxin B2')
+    ps_aflotoxin_g1 = fields.Char('Aflotoxin G1')
+    ps_aflotoxin_g2 = fields.Char('Aflotoxin G2')
+    ps_ochratoxin_a = fields.Char('Ochratoxin A')
 
     # PAH
 
@@ -186,7 +186,7 @@ class ProductSpecification(models.Model):
     # Statements
 
     ps_undesirable_substances = fields.Char('Undesirable substances')
-    ps_animal_testing = fields.Char('Undesirable substances')
+    ps_animal_testing = fields.Char('Animal Testing')
     ps_pesticides = fields.Char('Pesticides')
     ps_irradiation = fields.Char('Irradiation')
     ps_gmo = fields.Char('GMO Free')

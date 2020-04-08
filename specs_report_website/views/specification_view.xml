@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="inherited_product_tmpl" model="ir.ui.view">
+        <field name="name">Product Tmpl Inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='inventory']" position="after">
+                <page string="Product Specification">
+                    <group>
+                        <group>
+                            <field name="ps_origin_name"/>
+                            <field name="ps_botanical_name"/>
+                            <field name="ps_harmonization_code"/>
+                            <field name="ps_packaging"/>
+                            <field name="ps_pallet_qty"/>
+                            <field name="ps_storage"/>
+                            <field name="ps_shelf_life"/>
+                            <field name="ps_accreditations"/>
+                        </group>
+                        <group string="Characteristics">
+                            <field name="ps_appearance"/>
+                            <field name="ps_odour"/>
+                            <field name="ps_flavour"/>
+                            <field name="ps_texture"/>
+                            <field name="ps_purity"/>
+                            <field name="ps_mesh_size"/>
+                            <field name="ps_broken_pieces"/>
+                            <field name="ps_foreign_material"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Nutritional Values">
+                            <group>
+                                <group>
+                                    <field name="ps_energy"/>
+                                    <field name="ps_saturated"/>
+                                    <field name="ps_m_unsaturated"/>
+                                    <field name="ps_omega_3"/>
+                                    <field name="ps_omega_9"/>
+                                    <field name="ps_carbohydrates"/>
+                                    <field name="ps_sucrose"/>
+                                    <field name="ps_glucose"/>
+                                    <field name="ps_dietary_fiber_total"/>
+                                    <field name="ps_salt"/>
+                                </group>
+                                <group>
+                                    <field name="ps_fat"/>
+                                    <field name="ps_p_unsaturated"/>
+                                    <field name="ps_t_unsaturated"/>
+                                    <field name="ps_omega_6"/>
+                                    <field name="ps_trans_fatty_acids"/>
+                                    <field name="ps_sugar"/>
+                                    <field name="ps_fructose"/>
+                                    <field name="ps_maltose"/>
+                                    <field name="ps_protein"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Vitamins">
+                            <group>
+                                <group>
+                                    <field name="ps_vitamin_a"/>
+                                    <field name="ps_vitamin_b2"/>
+                                    <field name="ps_vitamin_b4"/>
+                                    <field name="ps_vitamin_b6"/>
+                                    <field name="ps_vitamin_b8"/>
+                                    <field name="ps_vitamin_b12"/>
+                                    <field name="ps_vitamin_b17"/>
+                                    <field name="ps_vitamin_d"/>
+                                    <field name="ps_vitamin_d3"/>
+                                </group>
+                                <group>
+                                    <field name="ps_vitamin_b1"/>
+                                    <field name="ps_vitamin_b3"/>
+                                    <field name="ps_vitamin_b5"/>
+                                    <field name="ps_vitamin_b7"/>
+                                    <field name="ps_vitamin_b9"/>
+                                    <field name="ps_vitamin_b15"/>
+                                    <field name="ps_vitamin_c"/>
+                                    <field name="ps_vitamin_d2"/>
+                                    <field name="ps_vitamin_e"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Minerals">
+                            <group>
+                                <group>
+                                    <field name="ps_calcium"/>
+                                    <field name="ps_copper"/>
+                                    <field name="ps_iron"/>
+                                    <field name="ps_molybdenum"/>
+                                    <field name="ps_potassium"/>
+                                    <field name="ps_sodium"/>
+                                    <field name="ps_magnesium"/>
+                                </group>
+                                <group>
+                                    <field name="ps_chromium"/>
+                                    <field name="ps_iodine"/>
+                                    <field name="ps_manganese"/>
+                                    <field name="ps_phosphorus"/>
+                                    <field name="ps_selenium"/>
+                                    <field name="ps_zinc"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Microbiology">
+                            <group>
+                                <group>
+                                    <field name="ps_aerobic_plate_count"/>
+                                    <field name="ps_moulds"/>
+                                    <field name="ps_salmonella"/>
+                                    <field name="ps_coliforms"/>
+                                    <field name="ps_bacillus_cereus"/>
+                                    <field name="ps_acid_value"/>
+                                    <field name="ps_thc"/>
+                                    <field name="ps_chlorophyll"/>
+                                    <field name="ps_ash"/>
+                                    <field name="ps_carotenoid"/>
+                                    <field name="ps_ph"/>
+                                </group>
+                                <group>
+                                    <field name="ps_yeast"/>
+                                    <field name="ps_enterobacteriaceae"/>
+                                    <field name="ps_escherichia_coli"/>
+                                    <field name="ps_staphylococcus_aureus"/>
+                                    <field name="ps_free_fatty_acid"/>
+                                    <field name="ps_peroxide"/>
+                                    <field name="ps_moisture"/>
+                                    <field name="ps_sulphur_dioxide"/>
+                                    <field name="ps_cholesterol"/>
+                                    <field name="ps_caffein"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Amino Acid">
+                            <group>
+                                <group>
+                                    <field name="ps_alanine"/>
+                                    <field name="ps_aspartic_acid"/>
+                                    <field name="ps_glutamic_acid"/>
+                                    <field name="ps_histidine"/>
+                                    <field name="ps_leucine"/>
+                                    <field name="ps_methionine"/>
+                                    <field name="ps_proline"/>
+                                    <field name="ps_threonine"/>
+                                    <field name="ps_tyrosine"/>
+                                </group>
+                                <group>
+                                    <field name="ps_arginine"/>
+                                    <field name="ps_cysteine"/>
+                                    <field name="ps_glycine"/>
+                                    <field name="ps_isoleucine"/>
+                                    <field name="ps_lysine"/>
+                                    <field name="ps_phenylalanine"/>
+                                    <field name="ps_serine"/>
+                                    <field name="ps_tryptophan"/>
+                                    <field name="ps_valine"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Fatty Acid">
+                            <group>
+                                <group>
+                                    <field name="ps_palmitic"/>
+                                    <field name="ps_margaric"/>
+                                    <field name="ps_oleic"/>
+                                    <field name="ps_alpha_linoleic"/>
+                                    <field name="ps_stearidonic"/>
+                                    <field name="ps_eicosenoic_Acid"/>
+                                    <field name="ps_behenic"/>
+                                    <field name="ps_sterols"/>
+                                </group>
+                                <group>
+                                    <field name="ps_myristic"/>
+                                    <field name="ps_palmitoleic"/>
+                                    <field name="ps_stearic"/>
+                                    <field name="ps_linoleic"/>
+                                    <field name="ps_gamma_linoleic"/>
+                                    <field name="ps_arachidic"/>
+                                    <field name="ps_eicosadienoic"/>
+                                    <field name="ps_arachidonic"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Heavy Metals">
+                            <group>
+                                <group>
+                                    <field name="ps_pb"/>
+                                    <field name="ps_as"/>
+                                </group>
+                                <group>
+                                    <field name="ps_hg"/>
+                                    <field name="ps_cd"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="PAH">
+                            <group>
+                                <group>
+                                    <field name="ps_naphthalene"/>
+                                    <field name="ps_acenaphthene"/>
+                                    <field name="ps_phenanthrene"/>
+                                    <field name="ps_benz_a_anthracene"/>
+                                    <field name="ps_Benz_b_fluoranthene"/>
+                                    <field name="ps_Benz_a_pyrene"/>
+                                    <field name="ps_Benz_g_h_i_pyrene"/>
+                                    <field name="ps_pyrene"/>
+                                    <field name="ps_sum_PAH_4"/>
+                                </group>
+                                <group>
+                                    <field name="ps_acenaphthylene"/>
+                                    <field name="ps_fluorene"/>
+                                    <field name="ps_fluoranthene"/>
+                                    <field name="ps_anthracene"/>
+                                    <field name="ps_chrysene"/>
+                                    <field name="ps_Benz_k_fluoranthene"/>
+                                    <field name="ps_Dibenz_a_h_anthracene"/>
+                                    <field name="ps_indenk_1_2_3_c_d_pyrene"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Mycotoxins">
+                            <group>
+                                <group>
+                                    <field name="ps_aflotoxin_b1"/>
+                                    <field name="ps_aflotoxin_g1"/>
+                                    <field name="ps_ochratoxin_a"/>
+                                </group>
+                                <group>
+                                    <field name="ps_aflotoxin_b2"/>
+                                    <field name="ps_aflotoxin_g2"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Statements">
+                            <group>
+                                <group>
+                                    <field name="ps_undesirable_substances"/>
+                                    <field name="ps_pesticides"/>
+                                    <field name="ps_gmo"/>
+                                </group>
+                                <group>
+                                    <field name="ps_animal_testing"/>
+                                    <field name="ps_irradiation"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
