@@ -20,6 +20,13 @@ _logger = logging.getLogger(__name__)
 class ProductSpecsReport(ProductConfiguratorController):
 
     @http.route(['/shop/product/<model("product.template"):product>'], type='http', auth="public", website=True)
+    def product_specs_report(self, product):
+        pdf, _ = request.env.ref('specs_report_website.action_report_product_specification') \
+            .sudo().render_qweb_pdf([int(product)])
+        pdfhttpheaders = [('Content-Type', 'application/pdf'), ('Content-Length', len(pdf)),
+                          ('Content-Disposition', 'catalogue' + '.pdf;')]
+        return request.make_response(pdf, headers=pdfhttpheaders)
+
     def product(self, product, category='', search='', **kwargs):
         if not product.can_access_from_current_website():
             raise NotFound()

@@ -2,7 +2,9 @@
 <odoo>
     <template id="product_specs" inherit_id="website_sale.product">
         <xpath expr="//div[@class='col-md-6 col-xl-4 offset-xl-2']//div[@class='js_product js_main_product']//a[@class='btn btn-primary btn-lg mt8 js_check_product a-submit']" position="after">
-            <a role="button" id="" class="btn btn-primary btn-lg mt8 js_check_product a-submit" href="#">Product Specs</a>
+            <a t-att-href="'/shop/product?product.id'">
+                <button type="button" class="btn btn-primary btn-lg mt8 js_check_product a-submit">Product Specs</button>
+            </a>
         </xpath>
     </template>
 </odoo>
