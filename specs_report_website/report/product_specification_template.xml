@@ -5,71 +5,172 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="specs_report_website.catalog_layout">
                     <div class="page">
-                        <h2>PRODUCT SPECIFICATION</h2>
+                        <div class="text-center" style="color: black">
+                            <h3>PRODUCT SPECIFICATION</h3>
+                            <p style="font-weight: bold;" t-field="o.name"/>
+                            <p style="padding: 20px;" t-field="o.image_medium" t-options='{"widget": "image"}'/>
+                        </div>
                         <br/>
-                        <table class="table table-bordered" style="border: 2px solid black;">
-                            <thead>
+                        <div>
+                            <table>
                                 <tr>
-                                    <th class="text-center" style="border: 2px solid black;font-family:Verdana">
-                                        <p style="font-weight: bold;" t-field="o.name"/>
-                                    </th>
-                                    <th class="text-center" colspan="2" style="font-weight: bold;border: 2px solid black;">
-                                        <p>Specifications</p>
-                                    </th>
+                                    <th> </th>
+                                    <th> </th>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="border: 2px solid black;">
-                                        <div class="col-12 text-center">
-                                            <p style="padding: 50px;" t-field="o.image_medium" t-options='{"widget": "image"}'/>
-                                        </div>
-                                    </td>
-                                    <td style="border: 0px solid black;">
-                                        <t t-if="o.categ_id">
-                                            <span>Category</span>
-                                            <br/>
-                                            <br/>
-                                        </t>
-                                        <t t-if="o.list_price">
-                                            <span>Sale Price</span>
-                                            <br/>
-                                            <br/>
-                                        </t>
-                                        <t t-if="o.default_code">
-                                            <span>Internal Reference</span>
-                                            <br/>
-                                            <br/>
-                                        </t>
-                                        <t t-if="o.description">
-                                            <span>Description</span>
-                                        </t>
-                                    </td>
-                                    <td style="border: 0px solid black;">
-                                        <div class="col-12 text-center">
-                                            <t t-if="o.categ_id">
-                                                <span t-field="o.categ_id.name"/>
-                                                <br/>
-                                                <br/>
-                                            </t>
-                                            <t t-if="o.list_price">
-                                                <span t-field="o.list_price" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
-                                                <br/>
-                                                <br/>
-                                            </t>
-                                            <t t-if="o.default_code">
-                                                <span t-field="o.default_code"/>
-                                                <br/>
-                                                <br/>
-                                            </t>
-                                            <t t-if="o.description">
-                                                <span t-field="o.description"/>
-                                            </t>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                <div>
+                                    <tr>
+                                        <td><strong>Origin :</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_botanical_name"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Botanical Name :</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_harmonization_code"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Harmonization Code :</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_packaging"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Packaging :</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_pallet_qty"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Full Pallet Qty :</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_pallet_qty"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Storage :</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_storage"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Shelf life :</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_shelf_life"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Accreditations :</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_accreditations"/></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <td><strong><span style="color: green">Characteristics</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Appearance: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_appearance"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Odour: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_odour"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Flavour: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_flavour"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Texture: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_texture"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Purity: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_purity"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mesh Size: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_mesh_size"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Broken Pieces: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_broken_pieces"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Foreign material: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_foreign_material"/></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <td><strong><span style="color: green">Nutritional Values</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Energy: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_energy"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Fat: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_fat"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Saturated: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_saturated"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Poly Unsaturated: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_p_unsaturated"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mono Unsaturated: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_m_unsaturated"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Total Unsaturated: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_t_unsaturated"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Omega 3: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_omega_3"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Omega 6: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_omega_6"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Omega 9: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_omega_9"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Trans fatty acids: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_trans_fatty_acids"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Carbohydrates: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_carbohydrates"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sugar: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_sugar"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sucrose: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_sucrose"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Fructose: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_fructose"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Glucose: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_glucose"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Maltose: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_maltose"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Dietary Fiber Total: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_dietary_fiber_total"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Protein: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_protein"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Salt: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_salt"/></td>
+                                    </tr>
+                                </div>
+                            </table>
+                        </div>
                     </div>
                 </t>
             </t>
@@ -96,7 +197,7 @@
                     <h4 class="mt0" t-field="company.report_header"/>
                     <div name="company_address" class="mb4">
                         <span style="color: #000;font-color:#000000;" class="company_address" t-field="company.partner_id"
-                        t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
+                              t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
                     </div>
                 </div>
             </div>
@@ -108,10 +209,10 @@
         <div class="footer">
             <div class="text-center" style="border-top: 1px solid black;">
                 <ul class="list-inline mb4">
-                <li t-if="company.phone">Phone: <span t-field="company.phone"/></li>
-                <li t-if="company.email">Email: <span t-field="company.email"/></li>
-                <li t-if="company.website">Web: <span t-field="company.website"/></li>
-                <li t-if="company.vat"><t t-esc="company.country_id.vat_label or 'TIN'"/>: <span t-field="company.vat"/></li>
+                    <li t-if="company.phone">Phone: <span t-field="company.phone"/></li>
+                    <li t-if="company.email">Email: <span t-field="company.email"/></li>
+                    <li t-if="company.website">Web: <span t-field="company.website"/></li>
+                    <li t-if="company.vat"><t t-esc="company.country_id.vat_label or 'TIN'"/>: <span t-field="company.vat"/></li>
                 </ul>
                 <div name="financial_infos">
                     <span t-field="company.report_footer"/>
