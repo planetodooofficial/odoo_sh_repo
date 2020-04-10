@@ -13,7 +13,7 @@ class ProductSpecsReport(http.Controller):
     def product_specs_report(self, product_id):
         """In this function we are calling the report template
         of the corresponding product and
-        downloads the catalogue in pdf format"""
+        downloads the product specification in pdf format"""
         pdf, _ = request.env.ref('specs_report_website.action_report_product_catalog') \
             .sudo().render_qweb_pdf([int(product_id)])
         pdfhttpheaders = [('Content-Type', 'application/pdf'), ('Content-Length', len(pdf)),
