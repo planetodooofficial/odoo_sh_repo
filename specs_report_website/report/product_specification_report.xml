@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <report
-        id="action_report_product_specification"
-        string="Product Specification(PDF)"
+        id="action_report_product_catalog"
+        string="Product Catalog(PDF)"
         model="product.template"
         report_type="qweb-pdf"
-        name="specs_report_website.report_product_specification"
-        file="specs_report_website.report_product_specification"
+        name="specs_report_website.report_product_catalog"
+        file="specs_report_website.report_product_catalog"
         />
 </odoo>

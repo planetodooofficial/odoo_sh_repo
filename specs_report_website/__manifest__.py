@@ -9,7 +9,9 @@
     'depends': ['website', 'sale', 'website_payment', 'website_sale', 'website_mail', 'website_form', 'website_rating', 'digest', 'product', 'base'],
     'data': [
         'views/template.xml',
-        'views/specification_view.xml'
+        'views/specification_view.xml',
+        'report/product_specification_report.xml',
+        'report/product_specification_template.xml'
     ],
     'demo': [
 

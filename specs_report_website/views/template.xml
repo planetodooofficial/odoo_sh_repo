@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template id="product_specs" inherit_id="website_sale.product">
-        <xpath expr="//div[@class='col-md-6 col-xl-4 offset-xl-2']//div[@class='js_product js_main_product']//a[@class='btn btn-primary btn-lg mt8 js_check_product a-submit']" position="after">
-            <a t-att-href="'/shop/product?product.id'">
-                <button type="button" class="btn btn-primary btn-lg mt8 js_check_product a-submit">Product Specs</button>
-            </a>
+        <xpath expr="//div[@class='col-md-6 col-xl-4 offset-xl-2']//div[@class='js_product js_main_product']
+                //a[@class='btn btn-primary btn-lg mt8 js_check_product a-submit']" position="after">
+            <a role="button" class="btn btn-primary btn-lg mt8"
+               t-att-href="'/report/pdf/catalogue_download?product_id=%s' % product.id">Product Specifications</a>
         </xpath>
     </template>
 </odoo>
