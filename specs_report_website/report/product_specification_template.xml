@@ -12,7 +12,7 @@
                         </div>
                         <br/>
                         <div>
-                            <table>
+                            <table width="800">
                                 <tr>
                                     <th> </th>
                                     <th> </th>
@@ -167,6 +167,523 @@
                                     <tr>
                                         <td><strong>Salt: </strong></td>
                                         <td><span style="padding: 100px" t-field="o.ps_salt"/></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <td><strong><span style="color: green">Mycotoxins</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Aflotoxin B1: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_aflotoxin_b1"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Aflotoxin B2: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_aflotoxin_b2"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Aflotoxin G1: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_aflotoxin_g1"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Aflotoxin G2: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_aflotoxin_g2"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Ochratoxin A: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_ochratoxin_a"/></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <td><strong><span style="color: green">PAH</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Naphthalene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_naphthalene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Acenaphthylene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_acenaphthylene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Acenaphthene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_acenaphthene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Acenaphthene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_acenaphthene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Fluorene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_fluorene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Phenanthrene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_phenanthrene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Fluoranthene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_fluoranthene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Benz(a)anthracene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_benz_a_anthracene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Anthracene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_anthracene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Benz(b)fluoranthene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_Benz_b_fluoranthene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Chrysene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_chrysene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Benz(a)pyrene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_Benz_a_pyrene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Acenaphthene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_acenaphthene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Benz(k)fluoranthene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_Benz_k_fluoranthene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Benz(g.h.i)pyrene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_Benz_g_h_i_pyrene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Dibenz(a.h)anthracene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_Dibenz_a_h_anthracene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Indenk(1.2.3-c.d)pyrene: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_indenk_1_2_3_c_d_pyrene"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sum PAH_4: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_sum_PAH_4"/></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <td><strong><span style="color: green">Heavy Metals</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Pb: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_pb"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>As: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_as"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Hg: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_hg"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cd: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_cd"/></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <td><strong><span style="color: green">Fatty Acids</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Palmitic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_palmitic"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Myristic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_myristic"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Margaric Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_margaric"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Palmitoleic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_palmitoleic"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Oleic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_oleic"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Stearic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_stearic"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Alpha Linoleic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_alpha_linoleic"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Linoleic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_linoleic"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Stearidonic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_stearidonic"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Gamma Linoleic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_gamma_linoleic"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Eicosenoic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_eicosenoic_Acid"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Arachidic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_arachidic"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Behenic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_behenic"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Eicosadienoic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_eicosadienoic"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sterols Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_sterols"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Arachidonic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_arachidonic"/></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <td><strong><span style="color: green">Amino Acid</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Alanine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_alanine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Arginine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_arginine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Aspartic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_aspartic_acid"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cysteine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_cysteine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Glutamic Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_glutamic_acid"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Glycine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_glycine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Histidine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_histidine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Isoleucine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_isoleucine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Leucine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_leucine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Lysine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_lysine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Methionine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_methionine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Phenylalanine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_phenylalanine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Proline: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_proline"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Serine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_serine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Threonine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_threonine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Tryptophan: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_tryptophan"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Tyrosine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_tyrosine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Valine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_valine"/></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <td><strong><span style="color: green">Vitamins</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin A: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_a"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin B1: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_b1"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin B2: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_b2"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin B3: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_b3"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin B4: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_b4"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin B5: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_b5"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin B6: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_b6"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin B7: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_b7"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin B8: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_b8"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin B9: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_b9"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin B12: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_b12"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin B15: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_b15"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin B17: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_b17"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin C: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_c"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin D: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_d"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin D2: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_d2"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin D3: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_d3"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vitamin E: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_vitamin_e"/></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <td><strong><span style="color: green">Minerals</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Calcium: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_calcium"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Chromium: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_chromium"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Copper: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_copper"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Iodine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_iodine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Iron: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_iodine"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Manganese: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_manganese"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Molybdenum: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_molybdenum"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Phosphorus: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_phosphorus"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Potassium: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_potassium"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Selenium: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_selenium"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sodium: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_sodium"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Zinc: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_zinc"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Magnesium: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_magnesium"/></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                     <tr>
+                                        <td><strong><span style="color: green">Microbiology</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Aerobic Plate Count: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_aerobic_plate_count"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Yeast: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_yeast"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Moulds: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_moulds"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Enterobacteriaceae: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_enterobacteriaceae"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Salmonella: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_salmonella"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Escherichia Coli: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_escherichia_coli"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Coliforms: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_coliforms"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Staphylococcus Aureus: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_staphylococcus_aureus"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Bacillus Cereus: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_bacillus_cereus"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Free Fatty Acid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_free_fatty_acid"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Acid Value: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_acid_value"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Peroxide number: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_peroxide"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>THC: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_thc"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Moisture: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_moisture"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Chlorophyll: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_chlorophyll"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sulphur Dioxide(SO2): </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_sulphur_dioxide"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Ash: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_ash"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cholesterol: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_cholesterol"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Carotenoid: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_carotenoid"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>PH value: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_ph"/></td>
+                                    </tr>
+                                     <tr>
+                                        <td><strong>Caffeine: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_caffein"/></td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr>
+                                        <td><strong><span style="color: green">Statements</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Undesirable substances: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_undesirable_substances"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Animal Testing: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_animal_testing"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Pesticides: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_pesticides"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Irradiation: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_irradiation"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>GMO Free: </strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_gmo"/></td>
                                     </tr>
                                 </div>
                             </table>

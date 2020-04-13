@@ -181,7 +181,7 @@ class ProductSpecification(models.Model):
     ps_cholesterol = fields.Char('Cholesterol')
     ps_carotenoid = fields.Char('Carotenoid')
     ps_ph = fields.Char('PH value')
-    ps_caffein = fields.Char('Caffein')
+    ps_caffein = fields.Char('Caffeine')
 
     # Statements
 
