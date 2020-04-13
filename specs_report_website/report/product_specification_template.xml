@@ -20,35 +20,35 @@
                                 <div>
                                     <tr>
                                         <td><strong>Origin :</strong></td>
-                                        <td><span style="padding: 100px" t-field="o.ps_botanical_name"/></td>
+                                        <td><t t-if="o.ps_origin_name"><span style="padding: 100px" t-field="o.ps_origin_name"/></t></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Botanical Name :</strong></td>
-                                        <td><span style="padding: 100px" t-field="o.ps_harmonization_code"/></td>
+                                        <td><t t-if="o.ps_botanical_name"><span style="padding: 100px" t-field="o.ps_botanical_name"/></t></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Harmonization Code :</strong></td>
-                                        <td><span style="padding: 100px" t-field="o.ps_packaging"/></td>
+                                        <td><t t-if="o.ps_harmonization_code"><span style="padding: 100px" t-field="o.ps_harmonization_code"/></t></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Packaging :</strong></td>
-                                        <td><span style="padding: 100px" t-field="o.ps_pallet_qty"/></td>
+                                        <td><t t-if="o.ps_packaging"><span style="padding: 100px" t-field="o.ps_packaging"/></t></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Full Pallet Qty :</strong></td>
-                                        <td><span style="padding: 100px" t-field="o.ps_pallet_qty"/></td>
+                                        <td><t t-if="o.ps_pallet_qty"><span style="padding: 100px" t-field="o.ps_pallet_qty"/></t></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Storage :</strong></td>
-                                        <td><span style="padding: 100px" t-field="o.ps_storage"/></td>
+                                        <td><t t-if="o.ps_storage"><span style="padding: 100px" t-field="o.ps_storage"/></t></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Shelf life :</strong></td>
-                                        <td><span style="padding: 100px" t-field="o.ps_shelf_life"/></td>
+                                        <td><t t-if="o.ps_shelf_life"><span style="padding: 100px" t-field="o.ps_shelf_life"/></t></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Accreditations :</strong></td>
-                                        <td><span style="padding: 100px" t-field="o.ps_accreditations"/></td>
+                                        <td><t t-if="o.ps_accreditations"><span style="padding: 100px" t-field="o.ps_accreditations"/></t></td>
                                     </tr>
                                 </div>
                                 <div>

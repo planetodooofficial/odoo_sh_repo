@@ -2,10 +2,12 @@
 <odoo>
     <report
         id="action_report_product_catalog"
-        string="Product Catalog(PDF)"
+        string="SpecSheet(PDF)"
         model="product.template"
         report_type="qweb-pdf"
         name="specs_report_website.report_product_catalog"
         file="specs_report_website.report_product_catalog"
+        print_report_name="'SpecSheet - %s' % object.name"
+        menu="True"
         />
 </odoo>
