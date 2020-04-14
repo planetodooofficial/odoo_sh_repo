@@ -12,7 +12,7 @@
                         </div>
                         <br/>
                         <div>
-                            <table width="800">
+                            <table border="1" style="width:100%;">
                                 <tr>
                                     <th> </th>
                                     <th> </th>
@@ -573,7 +573,7 @@
                                     </tr>
                                 </div>
                                 <div>
-                                     <tr>
+                                    <tr>
                                         <td><strong><span style="color: green">Microbiology</span></strong></td>
                                     </tr>
                                     <tr>
@@ -656,7 +656,7 @@
                                         <td><strong>PH value: </strong></td>
                                         <td><span style="padding: 100px" t-field="o.ps_ph"/></td>
                                     </tr>
-                                     <tr>
+                                    <tr>
                                         <td><strong>Caffeine: </strong></td>
                                         <td><span style="padding: 100px" t-field="o.ps_caffein"/></td>
                                     </tr>
@@ -687,6 +687,85 @@
                                     </tr>
                                 </div>
                             </table>
+                            <div style="page-break-before: always;">
+                                <table>
+                                    <tr>
+                                        <td><strong><span style="color: green">Allergens</span></strong></td>
+                                        <td><strong><span style="color: green; padding: 50px;" class="text-center">Contain</span></strong></td>
+                                        <td><strong><span style="color: green; padding: 50px;" class="text-center">Cross Contamination</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cereals Containing Gluten</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_cereals_containing_gluten"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_cereals_containing_gluten"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Crustaceans and products thereof</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_crustaceans_products_thereof"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_crustaceans_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Eggs and products thereof</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_eggs_products_thereof"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_eggs_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Fish and products thereof</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_fish_products_thereof"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_fish_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Peanuts and products thereof</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_peanuts_products_thereof"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_peanuts_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Soybeans and products thereof</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_soybeans_products_thereof"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_soybeans_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Milk and products thereof including lactose</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_milk_products_thereof_including_lactose"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_milk_products_thereof_including_lactose"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Nuts i.e. almonds</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_nuts"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_nuts"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Celery and products thereof</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_celery_products_thereof"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_celery_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mustard and products thereof</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_mustard_products_thereof"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_mustard_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sesame seeds and products thereof</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_sesame_seeds_products_thereof"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_sesame_seeds_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sulphur dioxide and sulphites</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_sulphur_dioxide_sulphites"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_sulphur_dioxide_sulphites"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Lupin and products thereof</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_lupin_products_thereof"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_lupin_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Molluscs and products thereof</strong></td>
+                                        <td><span style="padding: 100px" t-field="o.ps_molluscs_products_thereof"/></td>
+                                        <td><span style="padding: 100px" t-field="o.p_molluscs_products_thereof"/></td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </t>

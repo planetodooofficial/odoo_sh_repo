@@ -191,22 +191,51 @@ class ProductSpecification(models.Model):
     ps_irradiation = fields.Char('Irradiation')
     ps_gmo = fields.Char('GMO Free')
 
-    # Allergens
+    # Allergens : Contains
 
     ps_cereals_containing_gluten = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Cereals Containing Gluten')
-    ps_crustaceans_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Crustaceans and products thereof')
+    ps_crustaceans_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                       string='Crustaceans and products thereof')
     ps_eggs_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Eggs and products thereof')
     ps_fish_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Fish and products thereof')
-    ps_peanuts_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Peanuts and products thereof')
-    ps_soybeans_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Soybeans and products thereof')
-    ps_milk_products_thereof_including_lactose = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Milk and products thereof including lactose')
+    ps_peanuts_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                   string='Peanuts and products thereof')
+    ps_soybeans_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                    string='Soybeans and products thereof')
+    ps_milk_products_thereof_including_lactose = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                                  string='Milk and products thereof including lactose')
     ps_nuts = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Nuts i.e. almonds')
     ps_celery_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Celery and products thereof')
-    ps_mustard_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Mustard and products thereof')
-    ps_sesame_seeds_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Sesame seeds and products thereof')
-    ps_sulphur_dioxide_sulphites = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Sulphur dioxide and sulphites')
+    ps_mustard_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                   string='Mustard and products thereof')
+    ps_sesame_seeds_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                        string='Sesame seeds and products thereof')
+    ps_sulphur_dioxide_sulphites = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                    string='Sulphur dioxide and sulphites')
     ps_lupin_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Lupin and products thereof')
-    ps_molluscs_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Molluscs and products thereof')
+    ps_molluscs_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                    string='Molluscs and products thereof')
+    # Allergens : Cross Contamination
 
-
-
+    p_cereals_containing_gluten = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Cereals Containing Gluten')
+    p_crustaceans_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                      string='Crustaceans and products thereof')
+    p_eggs_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Eggs and products thereof')
+    p_fish_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Fish and products thereof')
+    p_peanuts_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                  string='Peanuts and products thereof')
+    p_soybeans_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                   string='Soybeans and products thereof')
+    p_milk_products_thereof_including_lactose = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                                 string='Milk and products thereof including lactose')
+    p_nuts = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Nuts i.e. almonds')
+    p_celery_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Celery and products thereof')
+    p_mustard_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                  string='Mustard and products thereof')
+    p_sesame_seeds_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                       string='Sesame seeds and products thereof')
+    p_sulphur_dioxide_sulphites = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                   string='Sulphur dioxide and sulphites')
+    p_lupin_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Lupin and products thereof')
+    p_molluscs_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                   string='Molluscs and products thereof')

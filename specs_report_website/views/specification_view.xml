@@ -246,6 +246,42 @@
                                 </group>
                             </group>
                         </page>
+                        <page string="Allergens">
+                            <group>
+                                <group string="Contains">
+                                    <field name="ps_cereals_containing_gluten" widget="radio"/>
+                                    <field name="ps_crustaceans_products_thereof" widget="radio"/>
+                                    <field name="ps_eggs_products_thereof" widget="radio"/>
+                                    <field name="ps_fish_products_thereof" widget="radio"/>
+                                    <field name="ps_peanuts_products_thereof" widget="radio"/>
+                                    <field name="ps_soybeans_products_thereof" widget="radio"/>
+                                    <field name="ps_milk_products_thereof_including_lactose" widget="radio"/>
+                                    <field name="ps_nuts" widget="radio"/>
+                                    <field name="ps_celery_products_thereof" widget="radio"/>
+                                    <field name="ps_mustard_products_thereof" widget="radio"/>
+                                    <field name="ps_sesame_seeds_products_thereof" widget="radio"/>
+                                    <field name="ps_sulphur_dioxide_sulphites" widget="radio"/>
+                                    <field name="ps_lupin_products_thereof" widget="radio"/>
+                                    <field name="ps_molluscs_products_thereof" widget="radio"/>
+                                </group>
+                                <group string="Cross Contamination">
+                                    <field name="p_cereals_containing_gluten" widget="radio"/>
+                                    <field name="p_crustaceans_products_thereof" widget="radio"/>
+                                    <field name="p_eggs_products_thereof" widget="radio"/>
+                                    <field name="p_fish_products_thereof" widget="radio"/>
+                                    <field name="p_peanuts_products_thereof" widget="radio"/>
+                                    <field name="p_soybeans_products_thereof" widget="radio"/>
+                                    <field name="p_milk_products_thereof_including_lactose" widget="radio"/>
+                                    <field name="p_nuts" widget="radio"/>
+                                    <field name="p_celery_products_thereof" widget="radio"/>
+                                    <field name="p_mustard_products_thereof" widget="radio"/>
+                                    <field name="p_sesame_seeds_products_thereof" widget="radio"/>
+                                    <field name="p_sulphur_dioxide_sulphites" widget="radio"/>
+                                    <field name="p_lupin_products_thereof" widget="radio"/>
+                                    <field name="p_molluscs_products_thereof" widget="radio"/>
+                                </group>
+                            </group>
+                        </page>
                     </notebook>
                 </page>
             </xpath>
