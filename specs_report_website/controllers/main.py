@@ -17,5 +17,5 @@ class ProductSpecsReport(http.Controller):
         pdf, _ = request.env.ref('specs_report_website.action_report_product_catalog') \
             .sudo().render_qweb_pdf([int(product_id)])
         pdfhttpheaders = [('Content-Type', 'application/pdf'), ('Content-Length', len(pdf)),
-                          ('Content-Disposition', 'catalogue' + '.pdf;')]
+                          ('Content-Disposition', 'SpecSheet; filename="SpecSheet.pdf"')]
         return request.make_response(pdf, headers=pdfhttpheaders)
