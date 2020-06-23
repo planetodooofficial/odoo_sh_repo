@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_coa_template" name="report_coa_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <!--                <t t-call="specs_report_website.catalog_layout">-->
+                    <div class="page">
+                        <div style="color: black; text-align: center">
+                            <h3>Certificate Of Analysis</h3>
+                            <center><table class="table table-condensed" style="border-bottom: 0px solid white !important;width: 3in;">
+                                <tr>
+                                    <th style="text-align: left;">
+                                        <span t-field="o.product_id.display_name"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        LN/SN:
+                                        <span t-field="o.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center; vertical-align: middle;" class="col-5">
+                                        <img t-if="o.name" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 150)" style="width:100%;height:20%;"/>
+                                    </td>
+                                </tr>
+                            </table></center>
+                        </div>
+                        <br/>
+                        <div>
+                            <table>
+                                <tr>
+                                    <th> </th>
+                                    <th> </th>
+                                </tr>
+                                <div>
+                                    <div t-if="o.ps_origin_name">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Origin: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_origin_name"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_botanical_name">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Botanical Name: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_botanical_name"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_harmonization_code">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Harmonization Code: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_harmonization_code"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_packaging">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Packaging: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_packaging"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_pallet_qty">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Full Pallet Qty: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_pallet_qty"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_storage">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Storage: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_storage"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_shelf_life">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Shelf life: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_shelf_life"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_accreditations">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Accreditations: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_accreditations"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.ps_appearance or o.ps_odour or o.ps_flavour or o.ps_texture or o.ps_purity or o.ps_mesh_size or o.ps_broken_pieces or o.ps_foreign_material">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Characteristics</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.ps_appearance">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Appearance: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_appearance"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_odour">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Odour: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_odour"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_flavour">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Flavour: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_flavour"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_texture">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Texture: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_texture"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_purity">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Purity: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_purity"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_mesh_size">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Mesh Size: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_mesh_size"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_broken_pieces">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Broken Pieces: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_broken_pieces"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_foreign_material">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Foreign material: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_foreign_material"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.ps_energy or o.ps_fat or o.ps_saturated or o.ps_p_unsaturated or o.ps_m_unsaturated or o.ps_t_unsaturated or o.ps_omega_3 or o.ps_omega_6 or o.ps_omega_9 or o.ps_trans_fatty_acids or o.ps_carbohydrates or o.ps_sugar or o.ps_sucrose or o.ps_fructose or o.ps_glucose or o.ps_maltose or o.ps_dietary_fiber_total or o.ps_protein or o.ps_salt">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Nutritional Values</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.ps_energy">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Energy: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_energy"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_fat">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Fat: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_fat"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_saturated">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Saturated: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_saturated"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_p_unsaturated">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Poly Unsaturated: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_p_unsaturated"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_m_unsaturated">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Mono Unsaturated: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_m_unsaturated"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_t_unsaturated">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Total Unsaturated: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_t_unsaturated"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_omega_3">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Omega 3: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_omega_3"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_omega_6">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Omega 6: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_omega_6"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_omega_9">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Omega 9: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_omega_9"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_trans_fatty_acids">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Trans fatty acids: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_trans_fatty_acids"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_carbohydrates">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Carbohydrates: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_carbohydrates"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_sugar">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Sugar: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_sugar"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_sucrose">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Sucrose: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_sucrose"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_fructose">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Fructose: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_fructose"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_glucose">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Glucose: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_glucose"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_maltose">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Maltose: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_maltose"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_dietary_fiber_total">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Dietary Fiber Total: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_dietary_fiber_total"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_protein">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Protein: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_protein"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_salt">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Salt: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_salt"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.ps_aflotoxin_b1 or o.ps_aflotoxin_b2 or o.ps_aflotoxin_g1 or o.ps_aflotoxin_g2 or o.ps_ochratoxin_a">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Mycotoxins</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.ps_aflotoxin_b1">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Aflotoxin B1: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_aflotoxin_b1"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_aflotoxin_b2">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Aflotoxin B2: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_aflotoxin_b2"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_aflotoxin_g1">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Aflotoxin G1: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_aflotoxin_g1"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_aflotoxin_g2">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Aflotoxin G2: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_aflotoxin_g2"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_ochratoxin_a">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Ochratoxin A: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_ochratoxin_a"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if= "o.ps_naphthalene or o.ps_acenaphthylene or o.ps_acenaphthene or o.ps_acenaphthene or o.ps_fluorene or o.ps_phenanthrene or o.ps_fluoranthene or o.ps_benz_a_anthracene or o.ps_anthracene or o.ps_Benz_b_fluoranthene or o.ps_chrysene or o.ps_Benz_a_pyrene or o.ps_acenaphthene or o.ps_Benz_k_fluoranthene or o.ps_Benz_g_h_i_pyrene or o.ps_Dibenz_a_h_anthracene or o.ps_indenk_1_2_3_c_d_pyrene or o.ps_sum_PAH_4">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">PAH</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.ps_naphthalene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Naphthalene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_naphthalene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_acenaphthylene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Acenaphthylene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_acenaphthylene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_acenaphthene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Acenaphthene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_acenaphthene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_acenaphthene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Acenaphthene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_acenaphthene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_fluorene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Fluorene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_fluorene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_phenanthrene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Phenanthrene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_phenanthrene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_fluoranthene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Fluoranthene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_fluoranthene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_benz_a_anthracene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Benz(a)anthracene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_benz_a_anthracene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_anthracene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Anthracene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_anthracene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_Benz_b_fluoranthene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Benz(b)fluoranthene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_Benz_b_fluoranthene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_chrysene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Chrysene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_chrysene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_Benz_a_pyrene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Benz(a)pyrene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_Benz_a_pyrene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_acenaphthene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Acenaphthene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_acenaphthene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_Benz_k_fluoranthene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Benz(k)fluoranthene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_Benz_k_fluoranthene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_Benz_g_h_i_pyrene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Benz(g.h.i)pyrene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_Benz_g_h_i_pyrene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_Dibenz_a_h_anthracene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Dibenz(a.h)anthracene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_Dibenz_a_h_anthracene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_indenk_1_2_3_c_d_pyrene">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Indenk(1.2.3-c.d)pyrene: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_indenk_1_2_3_c_d_pyrene"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_sum_PAH_4">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Sum PAH_4: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_sum_PAH_4"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.ps_pb or o.ps_as or o.ps_hg or o.ps_cd">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Heavy Metals</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.ps_pb">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Pb: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_pb"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_as">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">As: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_as"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_hg">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Hg: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_hg"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_cd">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Cd: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_cd"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.ps_palmitic or o.ps_myristic or o.ps_margaric or o.ps_palmitoleic or o.ps_oleic or o.ps_stearic or o.ps_alpha_linoleic or o.ps_linoleic or o.ps_stearidonic or o.ps_gamma_linoleic or o.ps_eicosenoic_Acid or o.ps_arachidic or o.ps_behenic or o.ps_eicosadienoic or o.ps_sterols or o.ps_arachidonic">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Fatty Acids</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.ps_palmitic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Palmitic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_palmitic"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_myristic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Myristic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_myristic"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_margaric">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Margaric Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_margaric"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_palmitoleic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Palmitoleic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_palmitoleic"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_oleic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Oleic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_oleic"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_stearic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Stearic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_stearic"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_alpha_linoleic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Alpha Linoleic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_alpha_linoleic"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_linoleic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Linoleic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_linoleic"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_stearidonic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Stearidonic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_stearidonic"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_gamma_linoleic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Gamma Linoleic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_gamma_linoleic"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_eicosenoic_Acid">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Eicosenoic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_eicosenoic_Acid"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_arachidic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Arachidic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_arachidic"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_behenic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Behenic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_behenic"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_eicosadienoic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Eicosadienoic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_eicosadienoic"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_sterols">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Sterols Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_sterols"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_arachidonic">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Arachidonic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_arachidonic"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.ps_alanine or o.ps_arginine or o.ps_aspartic_acid or o.ps_cysteine or o.ps_glutamic_acid or o.ps_glycine or o.ps_histidine or o.ps_isoleucine or o.ps_leucine or o.ps_lysine or o.ps_methionine or o.ps_phenylalanine or o.ps_proline or o.ps_serine or o.ps_threonine or o.ps_tryptophan or o.ps_tyrosine or o.ps_valine">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Amino Acid</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.ps_alanine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Alanine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_alanine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_arginine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Arginine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_arginine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_aspartic_acid">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Aspartic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_aspartic_acid"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_cysteine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Cysteine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_cysteine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_glutamic_acid">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Glutamic Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_glutamic_acid"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_glycine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Glycine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_glycine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_histidine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Histidine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_histidine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_isoleucine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Isoleucine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_isoleucine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_leucine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Leucine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_leucine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_lysine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Lysine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_lysine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_methionine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Methionine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_methionine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_phenylalanine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Phenylalanine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_phenylalanine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_proline">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Proline: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_proline"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_serine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Serine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_serine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_threonine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Threonine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_threonine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_tryptophan">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Tryptophan: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_tryptophan"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_tyrosine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Tyrosine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_tyrosine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_valine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Valine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_valine"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.ps_vitamin_a or o.ps_vitamin_b1 or o.ps_vitamin_b2 or o.ps_vitamin_b3 or o.ps_vitamin_b4 or o.ps_vitamin_b5 or o.ps_vitamin_b6 or o.ps_vitamin_b7 or o.ps_vitamin_b8 or o.ps_vitamin_b9 or o.ps_vitamin_b12 or o.ps_vitamin_b15 or o.ps_vitamin_b17 or o.ps_vitamin_c or o.ps_vitamin_d or o.ps_vitamin_d2 or o.ps_vitamin_d3 or o.ps_vitamin_e">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Vitamins</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.ps_vitamin_a">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin A: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_a"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_b1">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin B1: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_b1"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_b2">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin B2: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_b2"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_b3">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin B3: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_b3"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_b4">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin B4: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_b4"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_b5">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin B5: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_b5"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_b6">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin B6: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_b6"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_b7">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin B7: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_b7"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_b8">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin B8: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_b8"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_b9">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin B9: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_b9"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_b12">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin B12: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_b12"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_b15">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin B15: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_b15"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_b17">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin B17: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_b17"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_c">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin C: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_c"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_d">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin D: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_d"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_d2">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin D2: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_d2"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_d3">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin D3: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_d3"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_vitamin_e">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vitamin E: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_vitamin_e"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.ps_calcium or o.ps_chromium or o.ps_copper or o.ps_iodine or o.ps_iodine or o.ps_manganese or o.ps_molybdenum or o.ps_phosphorus or o.ps_potassium or o.ps_selenium or o.ps_sodium or o.ps_zinc or o.ps_magnesium">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Minerals</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.ps_calcium">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Calcium: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_calcium"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_chromium">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Chromium: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_chromium"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_copper">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Copper: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_copper"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_iodine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Iodine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_iodine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_iodine">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Iron: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_iodine"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_manganese">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Manganese: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_manganese"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_molybdenum">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Molybdenum: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_molybdenum"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_phosphorus">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Phosphorus: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_phosphorus"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_potassium">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Potassium: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_potassium"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_selenium">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Selenium: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_selenium"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_sodium">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Sodium: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_sodium"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_zinc">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Zinc: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_zinc"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_magnesium">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Magnesium: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_magnesium"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.ps_aerobic_plate_count or o.ps_yeast or o.ps_moulds or o.ps_enterobacteriaceae or o.ps_salmonella or o.ps_escherichia_coli or o.ps_coliforms or o.ps_staphylococcus_aureus or o.ps_bacillus_cereus or o.ps_free_fatty_acid or o.ps_acid_value or o.ps_peroxide or o.ps_thc or o.ps_moisture or o.ps_chlorophyll or o.ps_sulphur_dioxide or o.ps_ash or o.ps_cholesterol or o.ps_carotenoid or o.ps_ph or o.ps_caffein">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Microbiology</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.ps_aerobic_plate_count">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Aerobic Plate Count: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_aerobic_plate_count"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_yeast">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Yeast: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_yeast"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_moulds">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Moulds: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_moulds"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_enterobacteriaceae">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Enterobacteriaceae: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_enterobacteriaceae"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_salmonella">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Salmonella: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_salmonella"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_escherichia_coli">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Escherichia Coli: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_escherichia_coli"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_coliforms">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Coliforms: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_coliforms"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_staphylococcus_aureus">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Staphylococcus Aureus: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_staphylococcus_aureus"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_bacillus_cereus">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Bacillus Cereus: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_bacillus_cereus"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_free_fatty_acid">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Free Fatty Acid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_free_fatty_acid"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_acid_value">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Acid Value: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_acid_value"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_peroxide">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Peroxide number: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_peroxide"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_thc">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">THC: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_thc"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_moisture">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Moisture: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_moisture"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_chlorophyll">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Chlorophyll: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_chlorophyll"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_sulphur_dioxide">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Sulphur Dioxide(SO2): </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_sulphur_dioxide"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_ash">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Ash: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_ash"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_cholesterol">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Cholesterol: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_cholesterol"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_carotenoid">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Carotenoid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_carotenoid"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_ph">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">PH value: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_ph"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_caffein">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Caffeine: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_caffein"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.ps_undesirable_substances or o.ps_animal_testing or o.ps_pesticides or o.ps_irradiation or o.ps_irradiation or o.ps_gmo">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Statements</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.ps_undesirable_substances">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Undesirable substances: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_undesirable_substances"/></td>
+                                        </tr>
+                                    </div>
+
+                                    <div t-if="o.ps_animal_testing">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Animal Testing: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_animal_testing"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_pesticides">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Pesticides: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_pesticides"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_irradiation">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Irradiation: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_irradiation"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ps_gmo">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">GMO Free: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ps_gmo"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                            </table>
+                            <div style="page-break-before: always;">
+                                <table>
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Allergens</span></strong></td>
+                                        <td><strong style="padding-right:20px"><span style="color: green; padding: 50px;" class="text-center">Contain</span></strong></td>
+                                        <td><strong style="padding-right:20px"><span style="color: green; padding: 50px;" class="text-center">Cross Contamination</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Cereals Containing Gluten</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_cereals_containing_gluten"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_cereals_containing_gluten"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Crustaceans and products thereof</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_crustaceans_products_thereof"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_crustaceans_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Eggs and products thereof</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_eggs_products_thereof"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_eggs_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Fish and products thereof</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_fish_products_thereof"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_fish_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Peanuts and products thereof</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_peanuts_products_thereof"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_peanuts_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Soybeans and products thereof</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_soybeans_products_thereof"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_soybeans_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Milk and products thereof including lactose</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_milk_products_thereof_including_lactose"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_milk_products_thereof_including_lactose"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Nuts i.e. almonds</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_nuts"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_nuts"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Celery and products thereof</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_celery_products_thereof"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_celery_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Mustard and products thereof</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_mustard_products_thereof"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_mustard_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Sesame seeds and products thereof</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_sesame_seeds_products_thereof"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_sesame_seeds_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Sulphur dioxide and sulphites</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_sulphur_dioxide_sulphites"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_sulphur_dioxide_sulphites"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Lupin and products thereof</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_lupin_products_thereof"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_lupin_products_thereof"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style="padding-right:20px">Molluscs and products thereof</strong></td>
+                                        <td><span style="padding-left: 0px" t-field="o.ps_molluscs_products_thereof"/></td>
+                                        <td><span style="padding-left: 0px" t-field="o.p_molluscs_products_thereof"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

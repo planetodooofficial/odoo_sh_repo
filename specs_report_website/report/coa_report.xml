@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="action_report_coa"
+        string="COA(PDF)"
+        model="stock.production.lot"
+        report_type="qweb-pdf"
+        name="specs_report_website.report_coa_template"
+        file="specs_report_website.report_coa_template"
+        print_report_name="'COA - %s' % object.name"
+        menu="True"
+        />
+</odoo>
