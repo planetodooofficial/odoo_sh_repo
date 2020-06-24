@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="portal_my_home_menu_purchased_lot" name="Portal layout : lot menu entries" inherit_id="portal.portal_breadcrumbs" priority="20">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'lots_purchased' or stock_production_lot" t-attf-class="breadcrumb-item #{'active ' if not stock_production_lot else ''}">
+                <a t-if="stock_production_lot" t-attf-href="/my/purchased/lots?{{ keep_query() }}">Lots Purchased</a>
+                <t t-else="">Lots Purchased</t>
+            </li>
+            <li t-if="stock_production_lot" class="breadcrumb-item active">
+                <t t-esc="stock_production_lot.name"/>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_purchased_lot" name="Portal My Home : lots purchased" inherit_id="portal.portal_my_home" priority="20">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="lot_count" t-call="portal.portal_docs_entry">
+                <t t-set="title">Lots Purchased</t>
+                <t t-set="url" t-value="'/my/purchased/lots'"/>
+                <t t-set="count" t-value="lot_count"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_my_purchased_lots" name="Portal: My Lots">
+        <t t-call="portal.portal_layout">
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Lots Purchased</t>
+            </t>
+            <t t-if="lots" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th>Lot/Serial Number</th>
+                        <th>Product</th>
+                        <th>Created On</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="lots" t-as="lot">
+                        <tr>
+                            <td><a t-attf-href="/my/purchased/lots#{lot.id}?#{keep_query()}"><t t-esc="lot.name"/></a></td>
+                            <td><span t-field="lot.product_id"/></td>
+                            <td><span t-field="lot.create_date" t-options='{"widget": "date"}'/></td>
+                        </tr>
+                    </t>
+                </tbody>
+            </t>
+        </t>
+    </template>
+
+
+    <template id="portal_my_purchased_lot" name="Portal: My Purchased Lot">
+        <t t-call="portal.portal_layout">
+            <t t-set="stock_production_lot" t-value="lot"/>
+            <div id="optional_placeholder"></div>
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4>
+                                    Lot/Serial Number
+                                    <span t-esc="lot.name"/>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <strong>Product</strong>
+                            </div>
+                            <div class="col-lg-2 text-right">
+                                <strong>Quantity</strong>
+                            </div>
+                            <div class="col-lg-2 text-right">
+                                <strong>Internal Reference</strong>
+                            </div>
+                        </div>
+                        <div class="row purchases_vertical_align">
+                            <div class="col-lg-1 text-center">
+                                <img t-att-src="image_data_uri(resize_to_48(lot.product_id.image))" alt="Product"/>
+                            </div>
+                            <div id='product_name' class="col-lg-5">
+                                <span t-esc="lot.product_id.display_name"/>
+                            </div>
+                            <div class="col-lg-2 text-right">
+                                <span t-esc="lot.product_qty"/>
+                            </div>
+                            <div class="col-lg-2 text-right">
+                                <span t-field="lot.ref"/>
+                            </div>
+                        </div>
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

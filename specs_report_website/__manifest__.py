@@ -11,6 +11,7 @@
         'views/template.xml',
         'views/specification_view.xml',
         'views/lot_serial_no_view.xml',
+        'views/purchased_lot_portal_template.xml',
         'report/product_specification_report.xml',
         'report/product_specification_template.xml',
         'report/coa_report.xml',
