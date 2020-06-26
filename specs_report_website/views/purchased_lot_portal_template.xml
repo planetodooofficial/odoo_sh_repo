@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
+<!--Lots Purchased Menu-->
     <template id="portal_my_home_menu_purchased_lot" name="Portal layout : lot menu entries" inherit_id="portal.portal_breadcrumbs" priority="20">
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
             <li t-if="page_name == 'lots_purchased' or stock_production_lot" t-attf-class="breadcrumb-item #{'active ' if not stock_production_lot else ''}">
@@ -22,7 +22,7 @@
             </t>
         </xpath>
     </template>
-
+<!--Lots purchased tree view-->
     <template id="portal_my_purchased_lots" name="Portal: My Lots">
         <t t-call="portal.portal_layout">
             <t t-call="portal.portal_searchbar">
@@ -49,7 +49,7 @@
         </t>
     </template>
 
-
+<!--Purchased Lots form view -->
     <template id="portal_my_purchased_lot" name="Portal: My Purchased Lot">
         <t t-call="portal.portal_layout">
             <t t-set="stock_production_lot" t-value="lot"/>
@@ -58,11 +58,14 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-10">
                                 <h4>
                                     Lot/Serial Number
                                     <span t-esc="lot.name"/>
                                 </h4>
+                            </div>
+                            <div class="col-lg-2">
+                                <a role="button" class="btn btn-primary btn-lg mt8" t-att-href="'/report/pdf/coa_download?lot_id=%s' % lot.id">COA <span class="fa fa-file-text"/></a>
                             </div>
                         </div>
                     </div>
@@ -96,6 +99,7 @@
                     </div>
                 </div>
             </div>
+            <div class="oe_structure mb32"/>
         </t>
     </template>
 </odoo>

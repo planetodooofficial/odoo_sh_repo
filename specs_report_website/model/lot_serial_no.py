@@ -5,6 +5,26 @@ from odoo import api, models, fields, _
 class LotSerialNo(models.Model):
     _inherit = 'stock.production.lot'
 
+
+
+    def return_lot_ids(self,id):
+        """
+        This function checks whether any of the Lot into Lot/Serial number is purchased by a customer
+        :param id: id (To check whether it has reference with purchase orders)
+        :return: id (Of the Lot which is purchased by the customer)
+        """
+        lots_purchased = []
+        stock_moves = self.env['stock.move.line'].search([
+            ('lot_id', '=', id),
+            ('state', '=', 'done')
+        ]).mapped('move_id')
+        stock_moves = stock_moves.search([('id', 'in', stock_moves.ids)]).filtered(
+            lambda move: move.picking_id.location_id.usage == 'supplier' and move.state == 'done')
+        lots_purchased.append(stock_moves.mapped('purchase_line_id.order_id'))
+        if lots_purchased [0]['id'] != False:
+            return id
+
+
     ps_origin_name = fields.Char('Origin')
     ps_botanical_name = fields.Char('Botanical Name')
     ps_harmonization_code = fields.Char('Harmonization Code')

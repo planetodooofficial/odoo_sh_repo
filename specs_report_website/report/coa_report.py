@@ -14,7 +14,7 @@ class COAReport(models.AbstractModel):
                         :param : docids
                         :param : data
                         :return : data
-                        :return : Product template records"""
+                        :return : Lot/Serial Number records"""
         lot_serial_no = self.env['stock.production.lot'].browse(docids)
         return {
             'data': data,

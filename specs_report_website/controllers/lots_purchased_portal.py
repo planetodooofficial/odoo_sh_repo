@@ -27,10 +27,17 @@ class CustomerPortal(CustomerPortal):
 
     def _prepare_portal_layout_values(self):
         values = super(CustomerPortal, self)._prepare_portal_layout_values()
-        values['lot_count'] = request.env['stock.production.lot'].search_count([
-            ('purchase_order_count', '!=', 0)
-        ])
+        lot_serial = request.env['stock.production.lot']
+        lot_ids = lot_serial.search([])
+        lots_purchased = []
+        for lot in lot_ids:
+            lot_id = lot_serial.return_lot_ids(lot.id)
+            if lot_id:
+                lots_purchased.append(lot_id)
+
+        values['lot_count'] = len(lots_purchased)
         return values
+
 
 
     @http.route(['/my/purchased/lots', '/my/purchased/lots/page/<int:page>'], type='http', auth="user", website=True)
@@ -67,7 +74,16 @@ class CustomerPortal(CustomerPortal):
             page=page,
             step=self._items_per_page
         )
-        # search the purchase orders to display, according to the pager data
+        lot_ids = Lot_Serial_No.search([])
+        lots_purchased = []
+        for lot in lot_ids:
+            lot_id = Lot_Serial_No.return_lot_ids(lot.id)
+            if lot_id:
+                lots_purchased.append(lot_id)
+
+        domain += [('id', 'in', lots_purchased)]
+
+        # search the Lots purchased to display, according to the pager data
         lots = Lot_Serial_No.search(
             domain,
             order=order,
@@ -84,6 +100,7 @@ class CustomerPortal(CustomerPortal):
             'page_name': 'lots_purchased',
             'pager': pager,
             'sortby': sortby,
+            'searchbar_sortings': searchbar_sortings,
             'filterby': filterby,
             'default_url': '/my/purchased/lots',
         })
@@ -100,3 +117,14 @@ class CustomerPortal(CustomerPortal):
         values = self._lot_serial_no_get_page_view_values(lot_sudo, access_token, **kw)
 
         return request.render("specs_report_website.portal_my_purchased_lot", values)
+
+    @http.route(['/report/pdf/coa_download'], type='http', auth='public')
+    def coa_report(self, lot_id):
+        """In this function we are calling the report template
+        of the corresponding lot/serial number and
+        downloads the COA report in pdf format"""
+        pdf, _ = request.env.ref('specs_report_website.action_report_coa') \
+            .sudo().render_qweb_pdf([int(lot_id)])
+        pdfhttpheaders = [('Content-Type', 'application/pdf'), ('Content-Length', len(pdf)),
+                          ('Content-Disposition', 'COA; filename="COA_report.pdf"')]
+        return request.make_response(pdf, headers=pdfhttpheaders)
