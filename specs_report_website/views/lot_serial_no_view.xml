@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//form//group[@name='main_group']" position="after">
                 <notebook>
-                    <page string="Product Specification">
+                    <page string="COA">
                         <group>
                             <group>
                                 <field name="ps_origin_name"/>
