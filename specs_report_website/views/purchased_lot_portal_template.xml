@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<!--Lots Purchased Menu-->
+    <!--Lots Purchased Menu-->
     <template id="portal_my_home_menu_purchased_lot" name="Portal layout : lot menu entries" inherit_id="portal.portal_breadcrumbs" priority="20">
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
             <li t-if="page_name == 'lots_purchased' or stock_production_lot" t-attf-class="breadcrumb-item #{'active ' if not stock_production_lot else ''}">
@@ -22,7 +22,7 @@
             </t>
         </xpath>
     </template>
-<!--Lots purchased tree view-->
+    <!--Lots purchased tree view-->
     <template id="portal_my_purchased_lots" name="Portal: My Lots">
         <t t-call="portal.portal_layout">
             <t t-call="portal.portal_searchbar">
@@ -42,6 +42,9 @@
                             <td><a t-attf-href="/my/purchased/lots#{lot.id}?#{keep_query()}"><t t-esc="lot.name"/></a></td>
                             <td><span t-field="lot.product_id"/></td>
                             <td><span t-field="lot.create_date" t-options='{"widget": "date"}'/></td>
+                            <td> <a role="button" class="btn btn-primary btn-lg mt8" t-att-href="'/report/pdf/coa_download?lot_id=%s' % lot.id">
+                                COA <span class="fa fa-file-text"/></a>
+                            </td>
                         </tr>
                     </t>
                 </tbody>
@@ -49,7 +52,7 @@
         </t>
     </template>
 
-<!--Purchased Lots form view -->
+    <!--Purchased Lots form view -->
     <template id="portal_my_purchased_lot" name="Portal: My Purchased Lot">
         <t t-call="portal.portal_layout">
             <t t-set="stock_production_lot" t-value="lot"/>
