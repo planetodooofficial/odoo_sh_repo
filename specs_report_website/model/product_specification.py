@@ -239,3 +239,150 @@ class ProductSpecification(models.Model):
     p_lupin_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')], string='Lupin and products thereof')
     p_molluscs_products_thereof = fields.Selection([('yes', 'YES'), ('no', 'NO')],
                                                    string='Molluscs and products thereof')
+
+    # MSDS Master Fields
+
+    # Product Name and Company Identification
+
+    product_name = fields.Char(string='Product Name')
+    bulk_code = fields.Char(string='Bulk Code')
+    company = fields.Many2one('res.company', string='Company')
+    address = fields.Text(string='Address')
+    telephone = fields.Char(string='Telephone')
+    email = fields.Char(string='Email')
+    website = fields.Char(string='Website')
+
+    # Composition and information on ingredients
+
+    cas_number = fields.Char(string='CAS Number')
+    composition = fields.Char(string='Composition')
+    INCI_name = fields.Char(string='INCI Name')
+    EINECS_number = fields.Char(string='EINECS Number')
+
+    # Hazards identification
+
+    # First aid Procedures
+
+    skin_contact = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                   string='Skin Contact')
+    eye_contact = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                    string='Eye Contact')
+    inhalation = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                    string='Inhalation')
+    ingestion = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                    string='Ingestion')
+
+    # Fire Fighting Measures
+
+    suitable_extinguishers = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                   string='Suitable Extinguishers')
+    unsuitable_extinguishers = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                              string='Unsuitable Extinguishers')
+    fire_hazard = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                                string='Fire Hazard')
+
+    # Accidental Release Measures
+
+    personal_precautions = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                   string='Personal Precautions')
+    safety_clothing = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                   string='Safety Clothing')
+    environmental_precautions = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                   string='Environmental Precautions')
+    clean_up_procedure = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                   string='Clean Up Procedure')
+    prohibited_materials = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                   string='Prohibited Materials')
+
+    # Handling and Storage
+
+    handling = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                            string='Handling')
+    ventilation = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                            string='Ventilation')
+    storage_condition = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                            string='Storage Condition')
+    fire_protection = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                            string=' Fire Protection')
+    container_materials = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                            string='Container Materials')
+
+    # Exposure Control/ Personal Protection
+
+    precautions = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                           string='Precautions')
+    engineering_control = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                           string='Engineering Control')
+    control_limits = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                           string='Control Limits')
+
+    # Personal Protection
+
+    respiratory = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                   string='Respiratory')
+    hand_protection = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                   string='Hand Protection')
+    eye_protection = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                   string='Eye Protection')
+    skin_protection = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                   string='Skin Protection')
+    other = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                                   string='Other')
+
+    # Physical & Chemical Properties
+
+    physical_state = fields.Char(string='Physical State')
+    odour = fields.Char(string='Odour')
+    colour = fields.Char(string='Colour')
+    ph_level = fields.Char(string='PH Level')
+    boiling_point = fields.Char(string='Boiling Point')
+    flash_point = fields.Char(string='Flash Point')
+    auto_flammability = fields.Char(string='Auto flammability')
+    explosive_properties = fields.Char(string='Explosive properties')
+    oxidizing_properties = fields.Char(string='Oxidizing Properties')
+    melting_point = fields.Char(string='Melting Point')
+    specific_gravity = fields.Char(string='Specific Gravity')
+    refractive_index = fields.Char(string='Refractive Index')
+    optical_rotation = fields.Char(string='Optical Rotation')
+    vapour_pressure_mm = fields.Char(string='Vapour Pressure mm')
+    evaporation_rate = fields.Char(string='Evaporation rate')
+    solubility_in_water = fields.Char(string='Solubility in water')
+    solubility_in_solven = fields.Char(string='Solubility in solven')
+
+    # Stability and Reactivity
+
+    conditions_to_avoid = fields.Char(string='Conditions to avoid')
+    materials_to_avoid = fields.Char(string='Materials to avoid')
+    polymerisation_hazard = fields.Char(string='Polymerisation Hazard')
+
+    # Toxicological information
+
+    general = fields.Char(string='General')
+    acute_LD50 = fields.Char(string='Acute LD50')
+    carcinogenicity = fields.Char(string='Carcinogenicity')
+    mutagenicity = fields.Char(string='Mutagenicity')
+
+    # Ecological information
+
+    biodegradability = fields.Char(string='Biodegradability')
+    precautionss = fields.Char(string='Precautions')
+
+    # Disposal considerations
+
+    # Transport information
+
+    road = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                             string='Road')
+    rail = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                             string='Other')
+    air = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                             string='Air')
+    sea = fields.Selection([('yes', 'YES'), ('no', 'NO')],
+                             string='Sea')
+
+    # Regulatory information
+
+    labels_for_conveyance = fields.Char(string='Labels for Conveyance')
+    labels_for_supply = fields.Char(string='Labels for Supply')
+
+    # Other Information

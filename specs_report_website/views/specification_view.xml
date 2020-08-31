@@ -284,6 +284,168 @@
                         </page>
                     </notebook>
                 </page>
+                <page string="MSDS">
+                    <notebook>
+                        <page string="Product Name and Company Identification">
+                            <group>
+                                <group>
+                                    <field name="product_name"/>
+                                    <field name="bulk_code"/>
+                                    <field name="company"/>
+                                    <field name="address"/>
+                                    <field name="telephone"/>
+                                    <field name="email"/>
+                                    <field name="website"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Composition and information on ingredients">
+                            <group>
+                                <group>
+                                    <field name="cas_number"/>
+                                    <field name="composition"/>
+                                    <field name="INCI_name"/>
+                                    <field name="EINECS_number"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Hazards identification">
+                        </page>
+                        <page string="First aid Procedures">
+                            <group>
+                                <group>
+                                    <field name="skin_contact"/>
+                                    <field name="eye_contact"/>
+                                    <field name="inhalation"/>
+                                    <field name="ingestion"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Fire Fighting Measures">
+                            <group>
+                                <group>
+                                    <field name="suitable_extinguishers"/>
+                                    <field name="unsuitable_extinguishers"/>
+                                    <field name="fire_hazard"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Accidental Release Measures">
+                            <group>
+                                <group>
+                                    <field name="personal_precautions"/>
+                                    <field name="safety_clothing"/>
+                                    <field name="environmental_precautions"/>
+                                    <field name="clean_up_procedure"/>
+                                    <field name="prohibited_materials"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Handling and Storage">
+                            <group>
+                                <group>
+                                    <field name="handling"/>
+                                    <field name="ventilation"/>
+                                    <field name="storage_condition"/>
+                                    <field name="fire_protection"/>
+                                    <field name="container_materials"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Exposure Control/ Personal Protection">
+                            <group>
+                                <group>
+                                    <field name="precautions"/>
+                                    <field name="engineering_control"/>
+                                    <field name="control_limits"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Personal Protection">
+                            <group>
+                                <group>
+                                    <field name="respiratory"/>
+                                    <field name="hand_protection"/>
+                                    <field name="eye_protection"/>
+                                    <field name="skin_protection"/>
+                                    <field name="other"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Physical And Chemical Properties">
+                            <group>
+                                <group>
+                                    <field name="physical_state"/>
+                                    <field name="odour"/>
+                                    <field name="colour"/>
+                                    <field name="ph_level"/>
+                                    <field name="boiling_point"/>
+                                    <field name="flash_point"/>
+                                    <field name="auto_flammability"/>
+                                    <field name="explosive_properties"/>
+                                    <field name="oxidizing_properties"/>
+                                    <field name="melting_point"/>
+                                    <field name="specific_gravity"/>
+                                    <field name="refractive_index"/>
+                                    <field name="optical_rotation"/>
+                                    <field name="vapour_pressure_mm"/>
+                                    <field name="evaporation_rate"/>
+                                    <field name="solubility_in_water"/>
+                                    <field name="solubility_in_solven"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Stability and Reactivity">
+                            <group>
+                                <group>
+                                    <field name="conditions_to_avoid"/>
+                                    <field name="materials_to_avoid"/>
+                                    <field name="polymerisation_hazard"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Toxicological information">
+                            <group>
+                                <group>
+                                    <field name="general"/>
+                                    <field name="acute_LD50"/>
+                                    <field name="carcinogenicity"/>
+                                    <field name="mutagenicity"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Ecological information">
+                            <group>
+                                <group>
+                                    <field name="biodegradability"/>
+                                    <field name="precautionss"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Disposal considerations">
+                        </page>
+                        <page string="Transport information">
+                            <group>
+                                <group>
+                                    <field name="road"/>
+                                    <field name="rail"/>
+                                    <field name="air"/>
+                                    <field name="sea"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Regulatory information">
+                            <group>
+                                <group>
+                                    <field name="labels_for_conveyance"/>
+                                    <field name="labels_for_supply"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Other Information">
+                        </page>
+                    </notebook>
+                </page>
             </xpath>
         </field>
     </record>

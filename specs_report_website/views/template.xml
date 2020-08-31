@@ -3,6 +3,7 @@
     <template id="product_specs" inherit_id="website_sale.product">
         <xpath expr="//a[@class='btn btn-primary btn-lg mt8 js_check_product a-submit']" position="after">
             <a role="button" class="btn btn-primary btn-lg mt8" t-att-href="'/report/pdf/catalogue_download?product_id=%s' % product.id">Product Specifications</a>
+            <a role="button" class="btn btn-primary btn-lg mt8" t-att-href="'/report/pdf/msds_download?product_id=%s' % product.id">Product MSDS Report</a>
         </xpath>
     </template>
 </odoo>

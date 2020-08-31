@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_product_msds" name="report_product_msds">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <!--                <t t-call="specs_report_website.catalog_layout">-->
+                    <div class="page">
+                        <div style="color: black; text-align: center">
+                            <h3>PRODUCT MSDS </h3>
+                            <p style="font-weight: bold;" t-field="o.name"/>
+                            <p style="padding: 20px;" t-field="o.image_medium" t-options='{"widget": "image"}'/>
+                        </div>
+                        <br/>
+                        <div>
+                            <table>
+                                <tr>
+                                    <th> </th>
+                                    <th> </th>
+                                </tr>
+                                <div t-if="o.product_name or o.bulk_code or o.company or o.address or o.telephone or o.email or o.website">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Product Name And Company Identification</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.product_name">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Product Name: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.product_name"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.bulk_code">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Bulk Code: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.bulk_code"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.company">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Company: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.company"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.address">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Address: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.address"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.telephone">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Telephone: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.telephone"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.email">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Email: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.email"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.website">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Website: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.website"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.cas_number or o.composition or o.INCI_name or o.EINECS_number">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Composition and information on ingredients</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.cas_number">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">CAS Number: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.cas_number"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.composition">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Composition: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.composition"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.INCI_name">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">INCI Name: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.INCI_name"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.EINECS_number">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">EINECS Number: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.EINECS_number"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.skin_contact or o.eye_contact or o.inhalation or o.ingestion">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">First aid Procedures</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.skin_contact">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Skin Contact: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.skin_contact"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.eye_contact">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Eye Contact: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.eye_contact"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.inhalation">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Inhalation: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.inhalation"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ingestion">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Ingestion: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ingestion"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.suitable_extinguishers or o.unsuitable_extinguishers or o.fire_hazard">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Fire Fighting Measures</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.suitable_extinguishers">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Suitable Extinguishers: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.suitable_extinguishers"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.unsuitable_extinguishers">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Unsuitable Extinguishers: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.unsuitable_extinguishers"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.fire_hazard">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Fire Hazard: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.fire_hazard"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if= "o.personal_precautions or o.safety_clothing or o.environmental_precautions or o.clean_up_procedure or o.prohibited_materials">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Accidental Release Measures</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.personal_precautions">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Personal Precautions: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.personal_precautions"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.safety_clothing">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Safety Clothing: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.safety_clothing"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.environmental_precautions">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Environmental Precautions: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.environmental_precautions"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.clean_up_procedure">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Clean Up Procedure: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.clean_up_procedure"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.prohibited_materials">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Prohibited Materials: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.prohibited_materials"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.handling or o.ventilation or o.storage_condition or o.fire_protection or o.container_materials">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Handling and Storage</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.handling">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Handling: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.handling"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ventilation">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">ventilation: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ventilation"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.storage_condition">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Storage Condition: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.storage_condition"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.fire_protection">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Fire Protection: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.fire_protection"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.container_materials">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Container Materials: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.container_materials"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.precautions or o.engineering_control or o.control_limits">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Exposure Control/ Personal Protection</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.precautions">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Precautions: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.precautions"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.engineering_control">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Engineering Control: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.engineering_control"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.control_limits">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Control Limits: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.control_limits"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.respiratory or o.hand_protection or o.eye_protection or o.skin_protection or o.other">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Personal Protection</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.respiratory">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Respiratory: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.respiratory"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.hand_protection">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Hand Protection: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.hand_protection"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.eye_protection">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Eye Protection: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.eye_protection"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.skin_protection">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Skin Protection: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.skin_protection"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.other">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Other: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.other"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.physical_state or o.odour or o.colour or o.ph_level or o.boiling_point or o.flash_point or o.auto_flammability or o.explosive_properties or o.oxidizing_properties or o.melting_point or o.specific_gravity or o.refractive_index or o.optical_rotation or o.vapour_pressure_mm or o.evaporation_rate or o.solubility_in_water or o.solubility_in_solven">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Physical And Chemical Properties</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.physical_state">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Physical State: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.physical_state"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.odour">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Odour: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.odour"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.colour">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Colour: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.colour"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.ph_level">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">PH Level: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.ph_level"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.boiling_point">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Boiling Point: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.boiling_point"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.flash_point">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Flash Point: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.flash_point"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.auto_flammability">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Auto Flammability: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.auto_flammability"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.explosive_properties">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Explosive Properties: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.explosive_properties"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.oxidizing_properties">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Oxidizing Properties: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.oxidizing_properties"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.melting_point">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Melting Point: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.melting_point"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.specific_gravity">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Specific Gravity: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.specific_gravity"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.refractive_index">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Refractive Index: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.refractive_index"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.optical_rotation">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Optical Rotation: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.optical_rotation"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.vapour_pressure_mm">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Vapour Pressure In mm: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.vapour_pressure_mm"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.evaporation_rate">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Evaporation Rate: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.evaporation_rate"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.solubility_in_water">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Solubility In Water: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.solubility_in_water"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.solubility_in_solven">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Solubility In Solvent: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.solubility_in_solven"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.conditions_to_avoid or o.materials_to_avoid or o.polymerisation_hazard">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Stability and Reactivity</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.conditions_to_avoid">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Conditions To Avoid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.conditions_to_avoid"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.materials_to_avoid">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Materials To Avoid: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.materials_to_avoid"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.polymerisation_hazard">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Polymerisation Hazard: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.polymerisation_hazard"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.general or o.acute_LD50 or o.carcinogenicity or o.mutagenicity">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Toxicological information</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.general">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">General: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.general"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.acute_LD50">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Acute LD50: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.acute_LD50"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.carcinogenicity">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Carcinogenicity: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.carcinogenicity"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.mutagenicity">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Mutagenicity: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.mutagenicity"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.biodegradability or o.precautionss">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Ecological information</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.biodegradability">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Biodegradability: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.biodegradability"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.precautionss">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Precautions: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.precautionss"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.road or o.rail or o.air or o.sea">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Transport information</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.road">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Road: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.road"/></td>
+                                        </tr>
+                                    </div>
+
+                                    <div t-if="o.rail">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Rail: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.rail"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.air">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Air: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.air"/></td>
+                                        </tr>
+                                    </div>
+
+                                    <div t-if="o.sea">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Sea: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.sea"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.labels_for_conveyance or o.labels_for_supply">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Regulatory information</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.labels_for_conveyance">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Labels For Conveyance: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.labels_for_conveyance"/></td>
+                                        </tr>
+                                    </div>
+                                    <div t-if="o.labels_for_supply">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Labels For Supply: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.labels_for_supply"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

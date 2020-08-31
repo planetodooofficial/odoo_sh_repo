@@ -14,6 +14,8 @@
         'views/purchased_lot_portal_template.xml',
         'report/product_specification_report.xml',
         'report/product_specification_template.xml',
+        'report/msds_report.xml',
+        'report/msds_report_template.xml',
         'report/coa_report.xml',
         'report/coa_report_template.xml',
 

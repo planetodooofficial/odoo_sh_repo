@@ -19,3 +19,16 @@ class ProductSpecsReport(http.Controller):
         pdfhttpheaders = [('Content-Type', 'application/pdf'), ('Content-Length', len(pdf)),
                           ('Content-Disposition', 'SpecSheet; filename="SpecSheet.pdf"')]
         return request.make_response(pdf, headers=pdfhttpheaders)
+
+class ProductMSDSReport(http.Controller):
+
+    @http.route(['/report/pdf/msds_download'], type='http', auth='public')
+    def product_msds_report(self, product_id):
+        """In this function we are calling the report template
+        of the corresponding product and
+        downloads the product MSDS in pdf format"""
+        pdf, _ = request.env.ref('specs_report_website.action_report_product_msds') \
+            .sudo().render_qweb_pdf([int(product_id)])
+        pdfhttpheaders = [('Content-Type', 'application/pdf'), ('Content-Length', len(pdf)),
+                          ('Content-Disposition', 'MSDSSheet; filename="MSDSSheet.pdf"')]
+        return request.make_response(pdf, headers=pdfhttpheaders)
