@@ -261,7 +261,7 @@ class ProductSpecification(models.Model):
 
     # Hazards identification
 
-    hazard_identification = fields.Char(string='Hazards identification')
+    hazard_identification = fields.Text(string='Hazards identification')
 
     # First aid Procedures
 
