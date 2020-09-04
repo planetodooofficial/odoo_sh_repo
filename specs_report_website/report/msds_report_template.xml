@@ -94,6 +94,17 @@
                                         </tr>
                                     </div>
                                 </div>
+                                <div t-if="o.hazard_identification">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Hazards identification</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.hazard_identification">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Hazards identification: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.hazard_identification"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
                                 <div t-if="o.skin_contact or o.eye_contact or o.inhalation or o.ingestion">
                                     <tr>
                                         <td><strong style="padding-right:20px"><span style="color: green">First aid Procedures</span></strong></td>
@@ -450,6 +461,17 @@
                                         </tr>
                                     </div>
                                 </div>
+                                <div t-if="o.disposal_consideration">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Disposal consideration</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.disposal_consideration">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Disposal consideration: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.disposal_consideration"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
                                 <div t-if="o.road or o.rail or o.air or o.sea">
                                     <tr>
                                         <td><strong style="padding-right:20px"><span style="color: green">Transport information</span></strong></td>
@@ -495,6 +517,17 @@
                                         <tr>
                                             <td><strong style="padding-right:20px">Labels For Supply: </strong></td>
                                             <td><span style="padding-left: 0px" t-field="o.labels_for_supply"/></td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <div t-if="o.other_information">
+                                    <tr>
+                                        <td><strong style="padding-right:20px"><span style="color: green">Other Information</span></strong></td>
+                                    </tr>
+                                    <div t-if="o.other_information">
+                                        <tr>
+                                            <td><strong style="padding-right:20px">Other Information: </strong></td>
+                                            <td><span style="padding-left: 0px" t-field="o.other_information"/></td>
                                         </tr>
                                     </div>
                                 </div>

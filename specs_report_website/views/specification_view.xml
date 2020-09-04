@@ -310,6 +310,11 @@
                             </group>
                         </page>
                         <page string="Hazards identification">
+                            <group>
+                                <group>
+                                    <field name="hazard_identification"/>
+                                </group>
+                            </group>
                         </page>
                         <page string="First aid Procedures">
                             <group>
@@ -330,6 +335,8 @@
                                 </group>
                             </group>
                         </page>
+                    </notebook>
+                    <notebook>
                         <page string="Accidental Release Measures">
                             <group>
                                 <group>
@@ -395,6 +402,8 @@
                                 </group>
                             </group>
                         </page>
+                    </notebook>
+                    <notebook>
                         <page string="Stability and Reactivity">
                             <group>
                                 <group>
@@ -423,6 +432,11 @@
                             </group>
                         </page>
                         <page string="Disposal considerations">
+                            <group>
+                                <group>
+                                    <field name="disposal_consideration"/>
+                                </group>
+                            </group>
                         </page>
                         <page string="Transport information">
                             <group>
@@ -443,6 +457,11 @@
                             </group>
                         </page>
                         <page string="Other Information">
+                            <group>
+                                <group>
+                                    <field name="other_information"/>
+                                </group>
+                            </group>
                         </page>
                     </notebook>
                 </page>

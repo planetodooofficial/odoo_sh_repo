@@ -261,6 +261,8 @@ class ProductSpecification(models.Model):
 
     # Hazards identification
 
+    hazard_identification = fields.Char(string='Hazards identification')
+
     # First aid Procedures
 
     skin_contact = fields.Selection([('yes', 'YES'), ('no', 'NO')],
@@ -369,6 +371,8 @@ class ProductSpecification(models.Model):
 
     # Disposal considerations
 
+    disposal_consideration = fields.Char(string='Disposal consideration')
+
     # Transport information
 
     road = fields.Selection([('yes', 'YES'), ('no', 'NO')],
@@ -386,3 +390,5 @@ class ProductSpecification(models.Model):
     labels_for_supply = fields.Char(string='Labels for Supply')
 
     # Other Information
+
+    other_information = fields.Char(string='Other Information')
